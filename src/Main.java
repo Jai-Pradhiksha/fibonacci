@@ -1,50 +1,23 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-/*
-
-//factorial
-public class Main {
+public class Main
+{
     public static void main(String[] args) {
-        int inputNumber=5;
-        FactorialFinder factorialFinder=new FactorialFinder();
-        System.out.println(factorialFinder.factorial(inputNumber));
-    }
-}
+        System.out.println("Odd Numbers:");
+        printOdds(20);
 
-class FactorialFinder{
-    int factorial(int number)
-    {
-        if (number==1)
-        {
-            return 1;
+    }
+
+    static int printOdds(int number) {
+        if (number == 1) {
+            System.out.println(number);
+            return 0;
         }
-        return number*factorial(number-1);
-    }
-}*/
-
-//fibonacci to print nth number
-public class Main {
-    public static void main(String[] args) {
-        int inputNumber = 3;
-        FibonacciSeries fibonacciseries = new FibonacciSeries();
-        System.out.println(fibonacciseries.fibonacci(inputNumber));
-        //greet();
-    }
-        /*
-        //static example
-        static void greet()
-        {
-            System.out.println("Hello");
-        }*/
-
-}
-
-class FibonacciSeries {
-    int fibonacci(int number) {
-        if (number<=1){
-            return number;
+        if (number%2!=0){
+            System.out.println(number);
+            printOdds(number-2);
         }
-        return fibonacci(number-1)+ fibonacci(number-2);
-
+        if (number%2==0){
+            printOdds(number-1);
+        }
+        return 1;
     }
 }
